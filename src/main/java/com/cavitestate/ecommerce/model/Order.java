@@ -6,6 +6,7 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 @Getter
 @Setter
@@ -27,8 +28,7 @@ public class Order {
 
     private String status;
 
-    @CreatedDate
-    private LocalDate dateNow;
+    private String dateNow;
 
     private String trackingNum;
 

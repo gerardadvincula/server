@@ -27,7 +27,7 @@ public class OrderDto {
 
     private String proofPayment;
 
-    private LocalDate dateNow;
+    private String dateNow;
 
     private String orderJsonList;
 

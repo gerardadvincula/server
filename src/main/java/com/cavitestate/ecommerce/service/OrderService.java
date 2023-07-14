@@ -138,7 +138,7 @@ public class OrderService {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MMM");
         return deliveredOrders.stream()
                 .collect(Collectors.groupingBy(
-                        order -> order.getDateNow().format(formatter),
+                        order -> order.getDateNow().format(String.valueOf(formatter)),
                         Collectors.summingDouble(Order::getTotalPrice)
                 ))
                 .entrySet().stream()
