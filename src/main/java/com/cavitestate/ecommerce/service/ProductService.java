@@ -120,12 +120,12 @@ public class ProductService {
     }
 
     public List<Product> getAllProductArchiveFalse() {
-        boolean archive = false;
+        Boolean archive = false;
         return productRepository.findByArchived(archive);
     }
 
     public Product updateProductToArchiveTrue(String id) {
-        boolean archive = true;
+        Boolean archive = true;
         Product product = productRepository.findById(id).orElse(null);
         assert product != null;
         product.setArchived(archive);
