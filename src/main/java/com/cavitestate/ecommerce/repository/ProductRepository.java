@@ -17,7 +17,7 @@ public interface ProductRepository extends MongoRepository<Product, String> {
 
     List<Product> findByArchived(Boolean archived);
 
-    List<Product> findAllByCategoryId(String categoryId);
+    List<Product> findAllByCategoryIdAndArchived(String categoryId, Boolean archived);
 
     List<Product> findByBestSeller(Boolean bestSeller);
 }

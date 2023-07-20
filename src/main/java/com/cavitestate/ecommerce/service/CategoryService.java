@@ -37,8 +37,9 @@ public class CategoryService {
 //    }
 
     public List<Product> findCategoryById(String categoryId){
+        Boolean archived = false;
         productService.updateBestSeller();
-        return productRepository.findAllByCategoryId(categoryId);
+        return productRepository.findAllByCategoryIdAndArchived(categoryId, archived);
     }
 
     public void updateCategory(String categoryId, Category getCategory) {
