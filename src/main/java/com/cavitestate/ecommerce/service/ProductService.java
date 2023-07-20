@@ -124,11 +124,10 @@ public class ProductService {
         return productRepository.findByArchived(archive);
     }
 
-    public Product updateProductToArchiveTrue(String id) {
-        Boolean archive = true;
+    public Product updateProductToArchiveTrue(String id, ProductDto productDto) {
         Product product = productRepository.findById(id).orElse(null);
         assert product != null;
-        product.setArchived(archive);
+        product.setArchived(productDto.getArchived());
         return productRepository.save(product);
     }
 }

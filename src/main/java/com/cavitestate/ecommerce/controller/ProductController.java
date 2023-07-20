@@ -76,8 +76,8 @@ public class ProductController {
     }
 
     @PutMapping("/update/archive/{id}")
-    public Product updateArchiveTrue(@PathVariable String id) {
-        return productService.updateProductToArchiveTrue(id);
+    public Product updateArchiveTrue(@PathVariable String id, @RequestBody ProductDto productDto) {
+        return productService.updateProductToArchiveTrue(id, productDto);
     }
 
 }
