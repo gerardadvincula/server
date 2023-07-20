@@ -75,4 +75,9 @@ public class ProductController {
         return productService.getAllProductArchiveFalse();
     }
 
+    @PutMapping("/update/archive/{id}")
+    public Product updateArchiveTrue(@PathVariable String id) {
+        return productService.updateProductToArchiveTrue(id);
+    }
+
 }
