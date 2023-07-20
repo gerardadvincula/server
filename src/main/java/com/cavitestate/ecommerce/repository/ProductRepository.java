@@ -12,8 +12,10 @@ public interface ProductRepository extends MongoRepository<Product, String> {
 
 //    @Query("SELECT p FROM Product p WHERE p.name LIKE %:search%")
 //    List<Product> searchProduct(String search);
+//
+//    Optional<Product> findFirstByCategoryIdOrderBySoldDesc(String categoryId);
 
-    Optional<Product> findFirstByCategoryIdOrderBySoldDesc(String categoryId);
+    List<Product> findByArchived(Boolean archived);
 
     List<Product> findAllByCategoryId(String categoryId);
 

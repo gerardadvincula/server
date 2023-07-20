@@ -33,6 +33,14 @@ public class CourierController {
         return ResponseEntity.ok(updatedCourier);
     }
 
+
+    @GetMapping("/{id}")
+    private ResponseEntity<Courier> getCourierById(@PathVariable String id) {
+        Courier updatedCourier = courierService.getCourierById(id);
+        return ResponseEntity.ok(updatedCourier);
+    }
+
+
     @DeleteMapping("/delete/{id}")
     private ResponseEntity<String> deleteCourier(@PathVariable String id) {
         courierService.deleteCourier(id);

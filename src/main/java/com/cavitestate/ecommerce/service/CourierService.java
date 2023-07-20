@@ -22,6 +22,10 @@ public class CourierService {
         return courierRepository.findAll();
     }
 
+    public Courier getCourierById(String id) {
+        return courierRepository.findById(id).orElse(null);
+    }
+
     public Courier updateCourier(String id, Courier courier) {
         Courier updateCourier = courierRepository.findById(id).orElse(null);
         if (updateCourier != null) {

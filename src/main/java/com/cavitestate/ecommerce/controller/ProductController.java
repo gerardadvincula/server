@@ -25,7 +25,7 @@ public class ProductController {
     @PostMapping("/create")
     public String createProduct(@RequestBody ProductDto productDto) {
         Optional<Category> optionalCategories = categoryRepository.findById(productDto.getCategoryId());
-        if (optionalCategories.isEmpty()) {
+        if (!optionalCategories.isPresent()) {
             return "category does not exist";
         } else {
             productService.createProduct(productDto, optionalCategories.get());
@@ -68,6 +68,11 @@ public class ProductController {
     @GetMapping("/best-sellers-true")
     public List<Product> getBestSellerTrue() {
         return productService.getBestSellerTrue();
+    }
+
+    @GetMapping("/archive-false")
+    public List<Product> getProductsByArchiveFalse() {
+        return productService.getAllProductArchiveFalse();
     }
 
 }

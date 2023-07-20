@@ -63,7 +63,7 @@ public class ProductService {
 
     public void updateProduct(ProductDto productDTO, String productId) {
         Optional<Product> optionalProducts = productRepository.findById(productId);
-        if (optionalProducts.isEmpty()) {
+        if (!optionalProducts.isPresent()) {
             try {
                 throw new Exception("Product not present!");
             } catch (Exception e) {
@@ -118,4 +118,8 @@ public class ProductService {
         return productRepository.findByBestSeller(true);
     }
 
+    public List<Product> getAllProductArchiveFalse() {
+        boolean archive = false;
+        return productRepository.findByArchived(archive);
+    }
 }

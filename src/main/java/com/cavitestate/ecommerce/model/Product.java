@@ -30,6 +30,8 @@ public class Product {
 
     private String categoryId;
 
+    private Boolean archived = false;
+
     @CreatedDate
     private LocalDateTime createdDate;
 
