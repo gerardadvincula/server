@@ -19,4 +19,5 @@ public class ProductDto {
     private Float finalRating;
     private Integer sold;
     private Boolean bestSeller;
+    private Boolean archived;
 }

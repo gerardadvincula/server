@@ -45,6 +45,7 @@ public class ProductService {
         productDto.setCategoryId(product.getCategoryId());
         productDto.setCreatedDate(product.getCreatedDate());
         productDto.setSold(product.getSold());
+        productDto.setArchived(product.getArchived());
         return productDto;
     }
 
