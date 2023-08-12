@@ -75,6 +75,7 @@ public class ProductService {
         products.setName(productDTO.getName());
         products.setImageUrl(productDTO.getImageUrl());
         products.setDescription(productDTO.getDescription());
+        products.setArchived(productDTO.getArchived());
         products.setPrice(productDTO.getPrice());
         products.setQuantity(productDTO.getQuantity());
         productRepository.save(products);
