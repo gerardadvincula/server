@@ -1,13 +1,9 @@
 package com.cavitestate.ecommerce.service;
 
-import com.cavitestate.ecommerce.dto.AverageRatingDto;
 import com.cavitestate.ecommerce.model.ProductRating;
 import com.cavitestate.ecommerce.repository.ProductRatingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.aggregation.Aggregation;
-import org.springframework.data.mongodb.core.aggregation.AggregationResults;
-import org.springframework.data.mongodb.core.aggregation.GroupOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
@@ -37,11 +33,8 @@ public class ProductRatingService {
     }
 
 
-    public Double calculateAverageRatingByEmailAndProductId(String email, String productId) {
-        List<ProductRating> ratings = mongoTemplate.find(
-                Query.query(Criteria.where("email").is(email).and("productId").is(productId)),
-                ProductRating.class
-        );
+    public Double calculateAverageRatingByProductId(String productId) {
+        List<ProductRating> ratings = productRatingRepository.findByProductId(productId);
 
         if (!ratings.isEmpty()) {
             double sum = ratings.stream().mapToInt(ProductRating::getRating).sum();

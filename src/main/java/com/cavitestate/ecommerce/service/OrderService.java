@@ -32,8 +32,6 @@ public class OrderService {
     @Autowired
     ProductRepository productRepository;
 
-    @Autowired
-    MongoTemplate mongoTemplate;
 
     @Transactional
     public void createOrder(OrderDto orderDTO, User user) {

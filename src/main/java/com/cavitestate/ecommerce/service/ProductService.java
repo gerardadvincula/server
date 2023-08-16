@@ -3,7 +3,6 @@ package com.cavitestate.ecommerce.service;
 import com.cavitestate.ecommerce.dto.ProductDto;
 import com.cavitestate.ecommerce.model.Category;
 import com.cavitestate.ecommerce.model.Product;
-import com.cavitestate.ecommerce.repository.CategoryRepository;
 import com.cavitestate.ecommerce.repository.ProductRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,9 +16,6 @@ public class ProductService {
 
     @Autowired
     ProductRepository productRepository;
-
-    @Autowired
-    CategoryRepository categoryRepository;
 
     public void createProduct(ProductDto productDto, Category category) {
         Product product = new Product();

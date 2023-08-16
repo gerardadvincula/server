@@ -38,4 +38,6 @@ public class Product {
     private Integer sold = 0;
 
     private Boolean bestSeller = false;
+
+    private Long TotalSalesPerProduct;
 }

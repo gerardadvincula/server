@@ -20,4 +20,6 @@ public class ProductDto {
     private Integer sold;
     private Boolean bestSeller;
     private Boolean archived;
+
+    private Long TotalSalesPerProduct;
 }

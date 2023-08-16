@@ -23,9 +23,9 @@ public class ProductRatingController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/{email}/{productId}")
-    public Double calculateAverageRating(@PathVariable String email, @PathVariable String productId) {
-        return productRatingService.calculateAverageRatingByEmailAndProductId(email, productId);
+    @GetMapping("/{productId}")
+    public Double calculateAverageRating(@PathVariable String productId) {
+        return productRatingService.calculateAverageRatingByProductId(productId);
     }
 
     @GetMapping("/customerRating")
